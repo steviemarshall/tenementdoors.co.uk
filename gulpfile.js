@@ -3,7 +3,7 @@ const gulp = require('gulp');
 
 // Require Packages
 const concat = require('gulp-concat'),
-      change = require('gulp-changed'),
+      //changed = require('gulp-changed'),
       cssnano = require('gulp-cssnano'),
       del = require('del'),
       lec = require('gulp-line-ending-corrector'),
@@ -32,7 +32,7 @@ function compileHTML() {
   return gulp.src([
     paths.src + '/*.{htm,html}'   
   ])
-  .pipe(changed('/*.{htm,html}'))
+  //.pipe(changed('/*.{htm,html}'))
   .pipe(gulp.dest('./web'));
 }
 
@@ -69,7 +69,17 @@ function styles() {
   .pipe(gulp.dest('./web/assets/css'))
 }
 
+function watch() {
+  gulp.watch([
+    paths.src + '/styles/**/*.scss', styles
+  ]);
+}
 
+const build = gulp.series(
+  clean, 
+  gulp.parallel(styles, compileHTML)
+  );
+  gulp.task('build', build); 
 
 // Gulp Commands------------------
 
@@ -80,4 +90,6 @@ exports.message = message;
 exports.clean = clean;
 exports.compileHTML = compileHTML;
 exports.styles = styles;
+exports.watch = watch;
 
+exports.default = build;
