@@ -2,7 +2,8 @@
 const gulp = require('gulp');
 
 // Require Packages
-const concat = require('gulp-concat'),
+const browserSync = require('browser-sync').create(),
+      concat = require('gulp-concat'),
       //changed = require('gulp-changed'),
       cssnano = require('gulp-cssnano'),
       del = require('del'),
@@ -57,7 +58,7 @@ function styles() {
   }))
   .pipe(concat('main.min.css'))
   .pipe(size({
-    gzip: true,
+    gzip: false,
     showFiles: true
   }))
   .pipe(sourcemaps.write('./maps'))
@@ -67,19 +68,34 @@ function styles() {
     encoding:'utf8'
   }))
   .pipe(gulp.dest('./web/assets/css'))
+  .pipe(browserSync.stream());
 }
+
+// function watch() {
+//   gulp.watch([
+//     paths.src + '/styles/**/*.scss', styles
+//   ]);
+// }
 
 function watch() {
-  gulp.watch([
-    paths.src + '/styles/**/*.scss', styles
-  ]);
+  log('-> Watching');
+  browserSync.init({
+    // proxy: 'http://tenementdoors.local'
+    injectChanges: true,
+    server: "./web"
+  });
+  gulp.watch(paths.src + '/styles/**/*.scss', styles);
 }
 
+
 const build = gulp.series(
-  clean, 
-  gulp.parallel(styles, compileHTML)
-  );
-  gulp.task('build', build); 
+      clean, 
+      gulp.parallel(styles, compileHTML)
+      );
+      gulp.task('build', build); 
+
+
+
 
 // Gulp Commands------------------
 
@@ -93,3 +109,5 @@ exports.styles = styles;
 exports.watch = watch;
 
 exports.default = build;
+
+
