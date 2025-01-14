@@ -3,6 +3,7 @@ const gulp = require('gulp');
 
 // Require Packages
 const concat = require('gulp-concat'),
+      change = require('gulp-changed'),
       cssnano = require('gulp-cssnano'),
       del = require('del'),
       lec = require('gulp-line-ending-corrector'),
@@ -24,6 +25,15 @@ function message(done) {
 
 function clean() {
   return del(["./web/assets/"]);
+}
+
+function compileHTML() {
+  log('-> Moving HTML');
+  return gulp.src([
+    paths.src + '/*.{htm,html}'   
+  ])
+  .pipe(changed('/*.{htm,html}'))
+  .pipe(gulp.dest('./web'));
 }
 
 function styles() {
@@ -59,10 +69,15 @@ function styles() {
   .pipe(gulp.dest('./web/assets/css'))
 }
 
+
+
 // Gulp Commands------------------
 
 // Helper Task
 exports.message = message;
+
+// Build Tasks
 exports.clean = clean;
+exports.compileHTML = compileHTML;
 exports.styles = styles;
 
