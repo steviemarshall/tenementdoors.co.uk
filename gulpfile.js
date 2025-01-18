@@ -28,7 +28,7 @@ function clean() {
   return del(["./web/assets/"]);
 }
 
-function compileHTML() {
+function html() {
   log('-> Moving HTML');
   return gulp.src([
     paths.src + '/*.{htm,html}'   
@@ -56,7 +56,7 @@ function styles() {
     minifyFontValues: true,
     minifySelectors: true
   }))
-  //.pipe(concat('main.min.css'))
+  .pipe(concat('main.css'))
   .pipe(size({
     gzip: false,
     showFiles: true
@@ -84,17 +84,19 @@ function watch() {
     injectChanges: true,
     //server: "./web"
   });
-  gulp.watch(paths.src + '/sass/**/*.scss', styles);
+  gulp.watch(paths.src + '/src/sass/**/*.scss', styles);
+  gulp.watch(paths.src + '/src/*.{htm,html}', html);
 }
 
 
-const build = gulp.series(
-        clean, 
-        gulp.parallel(styles, compileHTML)
-      );
-      gulp.task('build', build); 
+// const build = gulp.series(
+//         clean, 
+//         gulp.parallel(styles, compileHTML)
+//       );
+//       gulp.task('build', build); 
 
-
+const start = gulp.series(styles,html);
+gulp.task('start', start);
 
 
 // Gulp Commands------------------
@@ -104,10 +106,11 @@ exports.message = message;
 
 // Build Tasks
 exports.clean = clean;
-exports.compileHTML = compileHTML;
 exports.styles = styles;
+exports.html = html;
+exports.start = start;
 exports.watch = watch;
 
-exports.default = build;
+//exports.default = build;
 
 
