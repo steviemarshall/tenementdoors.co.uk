@@ -44,7 +44,7 @@ function styles() {
   ])
   .pipe(sass({
     erroLogToConsole: true,
-    outputStyle: 'compressed'
+    // outputStyle: 'compressed'
   }))
   .on('error', sass.logError)
   .pipe(cssnano({
@@ -68,7 +68,7 @@ function styles() {
     encoding:'utf8'
   }))
   .pipe(gulp.dest('./web/assets/css'))
-  .pipe(browserSync.stream());
+  .pipe(browserSync.reload());
 }
 
 // function watch() {
@@ -77,15 +77,15 @@ function styles() {
 //   ]);
 // }
 
-function watch() {
+function watch(done) {
   log('-> Watching');
   browserSync.init({
-    proxy: 'http://tenementdoors.local',
     injectChanges: true,
-    //server: "./web"
+    server: "./web"
   });
-  gulp.watch(paths.src + '/src/sass/**/*.scss', styles);
+  gulp.watch(paths.src + '/src/sass/**/*.scss', styles).on('change', browserSync.reload);
   gulp.watch(paths.src + '/src/*.{htm,html}', html);
+  done();
 }
 
 
@@ -95,7 +95,7 @@ function watch() {
 //       );
 //       gulp.task('build', build); 
 
-const start = gulp.series(styles,html);
+const start = gulp.series(watch,styles,html,);
 gulp.task('start', start);
 
 
