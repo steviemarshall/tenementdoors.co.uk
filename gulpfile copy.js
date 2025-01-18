@@ -1,17 +1,17 @@
 // Require Gulp
 const gulp = require('gulp');
 
-// // Require Packages
-const browserSync = require('browser-sync'),
+// Require Packages
+const browserSync = require('browser-sync').create(),
       concat = require('gulp-concat'),
+      //changed = require('gulp-changed'),
       cssnano = require('gulp-cssnano'),
       del = require('del'),
       lec = require('gulp-line-ending-corrector'),
       log = require('fancy-log'),
       sass = require('gulp-sass'),
       size = require('gulp-size'),
-      sourcemaps = require('gulp-sourcemaps'),
-      server = browserSync.create();
+      sourcemaps = require('gulp-sourcemaps');
 
 // Setup paths for dependencies
 const paths = {
@@ -66,43 +66,24 @@ function styles() {
     eolc: 'LF',
     encoding:'utf8'
   }))
-  .pipe(gulp.dest('./web/assets/css'));
+  .pipe(gulp.dest('./web/assets/css'))
+  .pipe(browserSync.reload());
 }
 
-// function watch(done) {
-//   log('-> Watching');
-//   browserSync.init({
-//     injectChanges: true,
-//     server: "./web"
-//   });
-//   gulp.watch(paths.src + '/src/scss/**/*.scss', styles).on('change', browserSync.reload);
-//   gulp.watch(paths.src + '/src/*.{htm,html}', html);
-//   done();
-// }
-
-function reload(done) {
-  server.reload();
-  done();
-}
-
-function serve(done) {
-  server.init({
-    server: {
-      baseDir: './web'
-    }
+function watch(done) {
+  log('-> Watching');
+  browserSync.init({
+    injectChanges: true,
+    server: "./web"
   });
+  gulp.watch(paths.src + '/src/scss/**/*.scss', styles).on('change', browserSync.reload);
+  gulp.watch(paths.src + '/src/*.{htm,html}', html);
   done();
 }
 
+const start = gulp.series(watch,styles,html);
+gulp.task('start', start);
 
-
-// const start = gulp.series(watch,styles,html);
-// gulp.task('start', start);
-
-const watch = () => gulp.watch(paths.src + '/src/scss/**/*.scss', gulp.series(styles, reload));
-
-const dev = gulp.series(styles, serve, watch);
-//export default dev;
 
 // Gulp Commands------------------
 
@@ -113,10 +94,5 @@ exports.message = message;
 exports.clean = clean;
 exports.styles = styles;
 exports.html = html;
-// exports.start = start;
-// exports.watch = watch;
-
-exports.serve = serve;
-exports.reload = reload;
-
-exports.dev = dev;
+exports.start = start;
+exports.watch = watch;
