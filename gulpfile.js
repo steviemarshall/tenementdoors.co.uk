@@ -40,7 +40,7 @@ function html() {
 function styles() {
   log('-> Compiling SCSS');
   return gulp.src([
-    paths.src + '/sass/frontend.scss' 
+    paths.src + '/scss/frontend.scss' 
   ])
   .pipe(sass({
     erroLogToConsole: true,
@@ -71,31 +71,18 @@ function styles() {
   .pipe(browserSync.reload());
 }
 
-// function watch() {
-//   gulp.watch([
-//     paths.src + '/styles/**/*.scss', styles
-//   ]);
-// }
-
 function watch(done) {
   log('-> Watching');
   browserSync.init({
     injectChanges: true,
     server: "./web"
   });
-  gulp.watch(paths.src + '/src/sass/**/*.scss', styles).on('change', browserSync.reload);
+  gulp.watch(paths.src + '/src/scss/**/*.scss', styles).on('change', browserSync.reload);
   gulp.watch(paths.src + '/src/*.{htm,html}', html);
   done();
 }
 
-
-// const build = gulp.series(
-//         clean, 
-//         gulp.parallel(styles, compileHTML)
-//       );
-//       gulp.task('build', build); 
-
-const start = gulp.series(watch,styles,html,);
+const start = gulp.series(watch,styles,html);
 gulp.task('start', start);
 
 
@@ -110,7 +97,3 @@ exports.styles = styles;
 exports.html = html;
 exports.start = start;
 exports.watch = watch;
-
-//exports.default = build;
-
-
