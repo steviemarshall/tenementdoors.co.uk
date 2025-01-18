@@ -40,7 +40,7 @@ function compileHTML() {
 function styles() {
   log('-> Compiling SCSS');
   return gulp.src([
-    paths.src + '/styles/frontend.scss' 
+    paths.src + '/sass/frontend.scss' 
   ])
   .pipe(sass({
     erroLogToConsole: true,
@@ -56,7 +56,7 @@ function styles() {
     minifyFontValues: true,
     minifySelectors: true
   }))
-  .pipe(concat('main.min.css'))
+  //.pipe(concat('main.min.css'))
   .pipe(size({
     gzip: false,
     showFiles: true
@@ -80,17 +80,17 @@ function styles() {
 function watch() {
   log('-> Watching');
   browserSync.init({
-    // proxy: 'http://tenementdoors.local'
+    proxy: 'http://tenementdoors.local',
     injectChanges: true,
-    server: "./web"
+    //server: "./web"
   });
-  gulp.watch(paths.src + '/styles/**/*.scss', styles);
+  gulp.watch(paths.src + '/sass/**/*.scss', styles);
 }
 
 
 const build = gulp.series(
-      clean, 
-      gulp.parallel(styles, compileHTML)
+        clean, 
+        gulp.parallel(styles, compileHTML)
       );
       gulp.task('build', build); 
 
