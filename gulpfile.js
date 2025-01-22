@@ -14,7 +14,8 @@ const browserSync = require('browser-sync').create(),
 
 // Setup paths for dependencies
 const paths = {
-  src: './src'
+  src: './src',
+  node: './node_modules'
 }
 
 function message(done) {
@@ -31,18 +32,27 @@ function html() {
   return gulp.src([
     paths.src + '/*.{htm,html}'   
   ])
-  //.pipe(changed('/*.{htm,html}'))
   .pipe(gulp.dest('./web'));
+}
+
+function installPackages() {
+  log('-> Installing uikit');
+  return gulp.src([
+    paths.node + '/uikit/src/scss/**/*.scss'
+  ])
+    .pipe(gulp.dest('./src/scss/uikit'));
 }
 
 function styles() {
   log('-> Compiling SCSS');
   return gulp.src([
+    paths.src + '/scss/app.scss',
     paths.src + '/scss/frontend.scss' 
   ])
   .pipe(sass({
     erroLogToConsole: true,
     // outputStyle: 'compressed'
+    allowEmpty: true,
   }))
   .on('error', sass.logError)
   .pipe(cssnano({
@@ -76,30 +86,8 @@ function watch() {
     server: "./web"
   });
   gulp.watch(paths.src + '/scss/**/*.scss', styles);
-  // gulp.watch(paths.src + '/src/*.{htm,html}', html);
-  
+  // gulp.watch(paths.src + '/src/*.{htm,html}', html);  
 }
-
-// function reload(done) {
-//   server.reload();
-//   done();
-// }
-
-// function serve(done) {
-//   server.init({
-//     server: {
-//       baseDir: './web'
-//     }
-//   });
-//   done();
-// }
-
-
-
-// const start = gulp.series(watch,styles,html);
-// gulp.task('start', start);
-
-//const watch = () => gulp.watch(paths.src + '/src/scss/**/*.scss', gulp.series(styles, reload));
 
 //const dev = gulp.series(styles, serve, watch);
 //export default dev;
@@ -111,12 +99,7 @@ exports.message = message;
 
 // Build Tasks
 exports.clean = clean;
+exports.installPackages = installPackages;
 exports.styles = styles;
 exports.html = html;
 exports.watch = watch;
-// exports.start = start;
-
-// exports.serve = serve;
-// exports.reload = reload;
-
-// exports.dev = dev;
