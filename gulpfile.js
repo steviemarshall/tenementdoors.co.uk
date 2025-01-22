@@ -55,15 +55,15 @@ function styles() {
     allowEmpty: true,
   }))
   .on('error', sass.logError)
-  .pipe(cssnano({
-    discardComments: {
-      removeAll: false
-    },
-    discardDuplicates: true,
-    discardEmpty: true,
-    minifyFontValues: true,
-    minifySelectors: true
-  }))
+  // .pipe(cssnano({
+  //   discardComments: {
+  //     removeAll: false
+  //   },
+  //   discardDuplicates: true,
+  //   discardEmpty: true,
+  //   minifyFontValues: true,
+  //   minifySelectors: true
+  // }))
   .pipe(concat('main.css'))
   .pipe(size({
     gzip: false,
@@ -86,14 +86,17 @@ function watch() {
     server: "./web"
   });
   gulp.watch(paths.src + '/scss/**/*.scss', styles);
-  // gulp.watch(paths.src + '/src/*.{htm,html}', html);  
+  gulp.watch(paths.src + '/*.html', html).on('change', browserSync.reload);
+  // gulp.watch('./web/*.html').on('change', browserSync.reload);
 }
 
 //const dev = gulp.series(styles, serve, watch);
 //export default dev;
 
-// Gulp Commands------------------
 
+const serve = gulp.series(styles, html, watch);
+
+// Gulp Commands------------------
 // Helper Task
 exports.message = message;
 
@@ -103,3 +106,5 @@ exports.installPackages = installPackages;
 exports.styles = styles;
 exports.html = html;
 exports.watch = watch;
+
+exports.serve = serve; 
