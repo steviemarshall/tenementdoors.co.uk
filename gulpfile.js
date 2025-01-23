@@ -79,6 +79,15 @@ function styles() {
   .pipe(browserSync.stream());
 }
 
+function scripts() {
+  log('-> Moving Scripts');
+  return gulp.src([
+    paths.src + '/js/*.js'   
+  ])
+  .pipe(gulp.dest('./web/assets/js/'));
+}
+
+
 function watch() {
   log('-> Watching');
   browserSync.init({
@@ -87,6 +96,7 @@ function watch() {
   });
   gulp.watch(paths.src + '/scss/**/*.scss', styles);
   gulp.watch(paths.src + '/*.html', html).on('change', browserSync.reload);
+  gulp.watch(paths.src + '/js/*.js', scripts).on('change', browserSync.reload);
   // gulp.watch('./web/*.html').on('change', browserSync.reload);
 }
 
@@ -94,7 +104,7 @@ function watch() {
 //export default dev;
 
 
-const serve = gulp.series(styles, html, watch);
+const serve = gulp.series(styles, html, scripts, watch);
 
 // Gulp Commands------------------
 // Helper Task
@@ -104,6 +114,7 @@ exports.message = message;
 exports.clean = clean;
 exports.installPackages = installPackages;
 exports.styles = styles;
+exports.scripts = scripts;
 exports.html = html;
 exports.watch = watch;
 

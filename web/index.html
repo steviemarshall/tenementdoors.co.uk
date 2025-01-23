@@ -17,6 +17,140 @@
     <!-- <link rel="stylesheet" href="assets/build/css/main.css"> -->
     <link rel="stylesheet" href="assets/css/main.css">
 
+    <style>
+      body, div, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.0625em;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+#back-to-tutorial {
+    margin-left: 100px;
+}
+
+nav a {
+    position: relative;
+    top: 0;
+    padding: 10px 20px;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #83C78E;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+nav a.active {
+    top: -4px;
+    background-color: #69C773;
+    color: #FFFFFF;
+    -webkit-box-shadow: 0 4px 0 0 #51a65f;
+    -moz-box-shadow: 0 4px 0 0 #51a65f;
+    box-shadow: 0 4px 0 0 #51a65f;
+}
+
+.slides-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10;
+
+
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    /*height: 100vh + 30vh;
+    transform: translateY(30vh);
+    transition: 1.2s, all, cubic-bezier(0.22, 0.44, 0, 1);*/
+}
+
+/*#slide-1 {
+    transform: unset;
+    height: 100vh;
+}*/
+
+.slide .centered {
+    width: 60%;
+    margin: 200px auto 0;
+}
+
+.slide .centered h1 {
+    text-align: center;
+}
+
+.slide .centered p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#slide-1 {
+    background-color: #FFFFFF;
+}
+
+#slide-2 {
+    background-color: #45959b;
+}
+
+#slide-3 {
+    background-color: #778899;
+}
+
+#slide-4 {
+    color: #FFFFFF;
+    background-color: #291F37;
+}
+
+.go-prev, .go-next {
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+    </style>
+
   </head>
   <body>
 
@@ -24,7 +158,50 @@
 
     <a href="#">This is a test link blajh sss</a>
 
-    <script src="index.js"></script>
+    <nav>
+      <ul>
+          <li><span class="go-prev" style="background-color: pink;">prev</span></li>
+          <li><a href="#slide-1">Slide 1</a></li>
+          <li><a href="#slide-2">Slide 2</a></li>
+          <li><a href="#slide-3">Slide 3</a></li>
+          <li><a href="#slide-4">Slide 4</a></li>
+          <li><span class="go-next" style="background-color: pink;">next</span></li>
+      </ul>
+  </nav>
+
+  <div class="slides-container">
+    <div class="slide" id="slide-1">
+        <div class="centered">
+            <h1>Fullscreen slides with GSAP</h1>
+            <p>Let's go to the <span class="go-next">next slide</span>.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide-2">
+        <div class="centered">
+            <h1>It is so easy to navigate through slides</h1>
+            <p>You can go back to <span class="go-prev">previous slide</span> or go to the <span class="go-next">next slide</span>.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide-3">
+        <div class="centered">
+            <h1>Use mouse wheel</h1>
+
+            <p>No, really. Try to scroll up and down with the mouse wheel to switch between slides.</p>
+        </div>
+    </div>
+    <div class="slide" id="slide-4">
+        <div class="centered">
+            <h1>... Or use keyboard arrows</h1>
+            <p>You go to previous and next slide, using up and down keyboard arrows.</p>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/plugins/ScrollToPlugin.min.js"></script>
+    <script src="assets/js/main.js"></script>
     
   </body>
 </html>
