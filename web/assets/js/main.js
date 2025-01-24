@@ -44,17 +44,12 @@ $( document ).ready(function() {
 
 
 
-  var self  = this;
-  $document.touchwipe({
-  wipeUp: function() {                
-    self.goToNextSlide();            
-  },            
-  wipeDown: function(){
-    self.goToPrevSlide();            
-  },            
-  min_move_x: 50,            
-  min_move_y: 15,            
-  preventDefaultEvents: true});
+  // var self  = this;
+  // $document.touchwipe({
+             
+  // min_move_x: 50,            
+  // min_move_y: 15,            
+  // preventDefaultEvents: true});
   /*
   *   Internal functions
   * */
@@ -119,7 +114,7 @@ $( document ).ready(function() {
       goToPrevSlide();
     }
 
-    event.preventDefault();
+    //event.preventDefault();
   }
 
   /*
@@ -164,6 +159,21 @@ $( document ).ready(function() {
 
       TweenLite.to($navButtons.filter("[href=#" + $currentSlide.attr("id") + "]"), 0.5, {className: "+=active"});
 
+      var dataName = $currentSlide.data('name');
+      console.log(dataName);
+
+      $('body').addClass(dataName);
+
+      var $el = $('body');
+      var classList = $el.attr('class').split(' ');
+
+      $.each(classList, function(id, item) {
+          if (item.indexOf('slide-') == 0) $el.removeClass(item);
+      });
+
+      $el.addClass(dataName); // zoom-16, zoom-17, zoom-18 etc.
+
+      
     }
   }
 
@@ -201,9 +211,46 @@ $( document ).ready(function() {
 
   }
 
+  // const sections = gsap.utils.toArray(".slide")
+  // const body = document.querySelector("body")
 
+  // sections.forEach((element, index) => {
+  //   console.log("height", element.offsetHeight)
+  //   let className = element.dataset.name;
+  //   let previousClassName
+  //   let nextClassName
+  //   if(index > 0){
+  //     previousClassName = sections[index-1].dataset.name
+  //   }
+  //   if(index < sections.length-1){
+  //     nextClassName = sections[index+1].dataset.name
+  //   }
+  //   ScrollTrigger.create({
+  //     trigger:element,
+  //     start:"top bottom",
+  //     end:"bottom top",
+  //     onEnter: () => {
+  //       body.classList.remove(previousClassName)
+  //       body.classList.add(className) 
+  //     },
+  //     onEnterBack: () => {
+  //       body.classList.remove(previousClassName)
+  //       body.classList.remove(nextClassName)
+  //       body.classList.add(className) 
+  //     },
+  //     onLeaveBack: () => {
+  //       body.classList.remove(className)
+  //     },
+  //     onLeave: () => {
+  //       body.classList.remove(className)
+  //     },
+  //     markers:true
+      
+  //   })
+  // })
 
-
+  
 });
+
 
 
