@@ -46,8 +46,8 @@ function installPackages() {
 function styles() {
   log('-> Compiling SCSS');
   return gulp.src([
-    paths.src + '/scss/app.scss',
-    paths.src + '/scss/frontend.scss' 
+    paths.src + '/scss/app.scss'
+    //paths.src + '/scss/frontend.scss' 
   ])
   .pipe(sass({
     erroLogToConsole: true,

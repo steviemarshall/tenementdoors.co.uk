@@ -1,12 +1,49 @@
-// 1. Your custom variables and variable overwrites.
-$global-link-color: #ff00ff;
+// // #TODO - UIKIT NEEDED?
 
-// 2. Import default variables and available mixins.
-@import "uikit/variables-theme.scss";
-@import "uikit/mixins-theme.scss";
+// // 1. Your custom variables and variable overwrites.
+// $global-link-color: #ff00ff;
 
-// 3. Your custom mixin overwrites.
-@mixin hook-card() { color: #000; }
+// // 2. Import default variables and available mixins.
+// @import "uikit/variables-theme.scss";
+// @import "uikit/mixins-theme.scss";
 
-// 4. Import UIkit.
-@import "uikit/uikit-theme.scss";
+// // 3. Your custom mixin overwrites.
+// @mixin hook-card() { color: #000; }
+
+// // 4. Import UIkit.
+// @import "uikit/uikit-theme.scss";
+
+// @media (min-width: $breakpoint-medium) {
+// 	header.primary-header {
+// 		background-color: red;
+// 	}
+// }
+  
+
+/* - Set up custom layout & vars- */
+
+@import 'setup/variables';
+
+//@import 'layout/reset';
+@import 'layout/base';
+@import 'layout/header';
+
+// .green {
+// 	background:green;
+// }
+
+// .red {
+// 	background:red;
+// }
+
+// .blue {
+// 	background:blue;
+// }
+
+// .pink {
+// 	background:pink;
+// }
+
+// .purple {
+// 	background:purple;
+// }

@@ -14,14 +14,16 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.0/dist/css/uikit.min.css" /> -->
+
     <!-- <link rel="stylesheet" href="assets/build/css/main.css"> -->
     <link rel="stylesheet" href="assets/css/main.css">
 
     <style>
-      body, div, p {
-    margin: 0;
-    padding: 0;
-}
+      /* body, div, p {
+            margin: 0;
+            padding: 0;
+        } */
 
 body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -154,18 +156,55 @@ nav a.active {
   </head>
   <body>
 
-    <h1>ste blajh</h1>
+    <header class="primary-header">
+        <div class="uk-container">
+            <div class="header-inner">
+                <div class="logo-holder logo-holder--mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 157.6 133.8" class="logo--mobile">
+                            <path d="M21.3,97.6v-2.4l14.9-5.9V8.1H12.9L2.4,30.5H0V0h87.9v30.5h-2.4l-10.4-22.3h-23.5v81.2l15.1,5.9v2.4H21.3Z"/>
+                            <path d="M60.5,133.8v-2.4l12-5.9V44.4l-12-5.9v-2.4h45c11.1,0,20.6,1.9,28.3,5.8,7.7,3.8,13.7,9.1,17.7,15.8,4.1,6.7,6.1,14.3,6.1,22.8s-1.3,14.8-4,21.2c-2.7,6.5-6.4,12.1-11.2,16.9-4.8,4.8-10.4,8.5-16.9,11.2-6.5,2.7-13.5,4-21.2,4h-43.9ZM101.4,44.3h-13.5v81.3h15.7c7.9,0,14.6-1.7,20.3-5,5.6-3.3,10-8,13-14,3.1-6.1,4.6-13.2,4.6-21.5,0-12.3-3.5-22.2-10.4-29.7-6.9-7.4-16.8-11.2-29.7-11.2Z"/>
+                    </svg>
+                </div>
+                <div class="logo-holder--desktop">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 226.8 66.4" class="logo--desktop">
+                        <g>
+                            <path d="M35.4,23.3v-.7l3-1.4V2l-3-1.4v-.7h18.3v6h-.7l-2.2-3.9h-8.3v8.1h6.1l1.4-2.9h.7v7.8h-.7l-1.4-2.8h-6.1v8.9h9.3l2.3-4.7h.7v6.8h-19.3Z"/>
+                            <path d="M59.7,23.3v-.7l2.9-1.4V2l-2.9-1.3v-.7h6.2l14,16.7V2l-3.7-1.3v-.7h8.9v.7l-2.9,1.3v21.4h-1.9l-15.3-18.1v15.7l3.7,1.5v.7h-9Z"/>
+                            <path d="M89.7,23.3v-.7l3-1.4V2l-3-1.4v-.7h18.3v6h-.7l-2.2-3.9h-8.3v8.1h6.1l1.4-2.9h.7v7.8h-.7l-1.4-2.8h-6.1v8.9h9.3l2.3-4.7h.7v6.8h-19.3Z"/>
+                            <path d="M114.1,23.3v-.7l2.9-1.4.8-19.2-3.2-1.4v-.7h8l7.6,17,7.8-17h7.6v.7l-3.1,1.1.6,19.4,2.7,1.4v.7h-9.6v-.7l2.8-1.3-.4-17.2-8.9,19.3h-1.2l-8.6-19.4-.4,17.2,3,1.3v.7h-8.5Z"/>
+                            <path d="M150.7,23.3v-.7l3-1.4V2l-3-1.4v-.7h18.3v6h-.7l-2.2-3.9h-8.3v8.1h6.1l1.4-2.9h.7v7.8h-.7l-1.4-2.8h-6.1v8.9h9.3l2.3-4.7h.7v6.8h-19.3Z"/>
+                            <path d="M175.1,23.3v-.7l2.9-1.4V2l-2.9-1.3v-.7h6.2l14,16.7V2l-3.7-1.3v-.7h8.9v.7l-2.9,1.3v21.4h-1.9l-15.3-18.1v15.7l3.7,1.5v.7h-9Z"/>
+                            <path d="M209.9,23.3v-.7l3.7-1.4V2.1h-6.1l-2.2,5.1h-.7V0h22.1v7.1h-.7l-2.2-5.1h-6.1v19.1l3.8,1.4v.7h-11.6Z"/>
+                        </g>
+                        <g>
+                            <path d="M78.4,53.9c-2.3,0-4.4-.5-6.2-1.6-1.8-1-3.2-2.5-4.3-4.3-1-1.8-1.6-3.9-1.6-6.2s.5-4.4,1.6-6.2c1-1.8,2.5-3.3,4.3-4.3,1.8-1,3.9-1.6,6.2-1.6s4.4.5,6.2,1.6c1.8,1,3.2,2.5,4.3,4.3s1.6,3.9,1.6,6.2-.5,4.4-1.6,6.2-2.5,3.2-4.3,4.3c-1.8,1-3.9,1.6-6.2,1.6ZM79,51.9c2.2,0,4-.8,5.3-2.5,1.3-1.6,1.9-3.8,1.9-6.5s-.4-4.1-1.1-5.8-1.7-3-2.9-3.9c-1.3-.9-2.7-1.4-4.4-1.4s-4,.8-5.3,2.4-2,3.8-2,6.4.4,4.1,1.1,5.8c.7,1.7,1.7,3,3,3.9,1.3.9,2.7,1.4,4.4,1.4Z"/>
+                            <path d="M106.1,53.9c-2.3,0-4.4-.5-6.2-1.6-1.8-1-3.2-2.5-4.3-4.3-1-1.8-1.6-3.9-1.6-6.2s.5-4.4,1.6-6.2c1-1.8,2.5-3.3,4.3-4.3,1.8-1,3.9-1.6,6.2-1.6s4.4.5,6.2,1.6c1.8,1,3.2,2.5,4.3,4.3,1,1.8,1.6,3.9,1.6,6.2s-.5,4.4-1.6,6.2-2.5,3.2-4.3,4.3c-1.8,1-3.9,1.6-6.2,1.6ZM106.7,51.9c2.2,0,4-.8,5.3-2.5,1.3-1.6,1.9-3.8,1.9-6.5s-.4-4.1-1.1-5.8-1.7-3-2.9-3.9c-1.3-.9-2.7-1.4-4.4-1.4s-4,.8-5.3,2.4-2,3.8-2,6.4.4,4.1,1.1,5.8c.7,1.7,1.7,3,3,3.9,1.3.9,2.7,1.4,4.4,1.4Z"/>
+                            <path d="M121.5,53.5v-.7l3-1.4v-19.2l-3-1.4v-.7h10c2.5,0,4.6.5,6,1.6,1.5,1,2.2,2.5,2.2,4.3s-.4,2.5-1.2,3.4-2,1.7-3.5,2.3l6.4,9.8,2.7,1.3v.7h-6.5l-6.6-10.6h-2.5v8.5l2.7,1.4v.7h-9.8ZM130.6,32.3h-2v8.6h2.1c1.5,0,2.7-.4,3.5-1.2s1.3-1.8,1.3-3.2-.4-2.5-1.3-3.2c-.9-.7-2.1-1.1-3.7-1.1Z"/>
+                            <path d="M153.9,53.9c-1.5,0-2.8-.2-3.9-.5-1.1-.3-2.2-.7-3.3-1.3l-.4-5.6h.7l2.2,3.9c.7.6,1.5.9,2.3,1.2.8.2,1.7.3,2.6.3,1.5,0,2.7-.3,3.5-.9.8-.6,1.2-1.5,1.2-2.8s-.2-1.7-.7-2.2c-.5-.5-1.2-1-2.2-1.5-1-.5-2.2-1-3.7-1.7-1.7-.8-3-1.7-3.8-2.6-.8-.9-1.2-2.1-1.2-3.6s.4-2.3,1.1-3.4c.7-1,1.6-1.8,2.8-2.5,1.2-.6,2.5-.9,3.8-.9s2.3.1,3.3.4c1,.3,2,.7,2.9,1.1l.3,5.4h-.7l-1.9-3.7c-1.2-.9-2.4-1.4-3.8-1.4s-2.4.3-3.1,1c-.8.7-1.1,1.5-1.1,2.6s.2,1.3.5,1.8c.4.5.9.9,1.7,1.4.7.4,1.7.9,2.9,1.5,1.5.7,2.8,1.4,3.7,2.1.9.6,1.6,1.3,2.1,2.1.4.8.6,1.8.6,3s-.4,2.5-1.1,3.4-1.7,1.8-3,2.3c-1.3.6-2.7.9-4.3.9Z"/>
+                        </g>
+                        <path d="M8,36.2v-.9l5.6-2.2V2.8H4.8L.9,11.1h-.9V-.3h32.9v11.4h-.9l-3.9-8.4h-8.8v30.4l5.6,2.2v.9H8Z"/>
+                        <path d="M26.5,66.4v-.9l4.5-2.2v-30.3l-4.5-2.2v-.9h16.8c4.2,0,7.7.7,10.6,2.2,2.9,1.4,5.1,3.4,6.6,5.9,1.5,2.5,2.3,5.4,2.3,8.5s-.5,5.5-1.5,7.9-2.4,4.5-4.2,6.3-3.9,3.2-6.3,4.2c-2.4,1-5.1,1.5-7.9,1.5h-16.4ZM41.8,32.9h-5v30.5h5.9c3,0,5.5-.6,7.6-1.9,2.1-1.2,3.7-3,4.9-5.3,1.1-2.3,1.7-5,1.7-8.1,0-4.6-1.3-8.3-3.9-11.1-2.6-2.8-6.3-4.2-11.1-4.2Z"/>
+                    </svg>	
+                </div>
+                <div class="menu-holder">
+                    menu in here
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <a href="#">This is a test link blajh sss</a>
+    <!-- <h1>ste blajh</h1>
+
+    <a href="#">This is a test link blajh sss</a> -->
 
     <nav>
       <ul>
-          <li><span class="go-prev" style="background-color: pink;">prev</span></li>
-          <li><a href="#slide-1">Slide 1</a></li>
-          <li><a href="#slide-2">Slide 2</a></li>
-          <li><a href="#slide-3">Slide 3</a></li>
-          <li><a href="#slide-4">Slide 4</a></li>
-          <li><span class="go-next" style="background-color: pink;">next</span></li>
+          <li><a class="go-prev" style="background-color: pink;">Previous</a></li>
+          <li><a href="#slide-1"><span>Door 1</span></a></li>
+          <li><a href="#slide-2"><span>Door 2</span></a></li>
+          <li><a href="#slide-3"><span>Door 3</span></a></li>
+          <li><a href="#slide-4"><span>Door 4</span></a></li>
+          <li><a class="go-next" style="background-color: pink;">Next</a></li>
       </ul>
   </nav>
 
@@ -174,6 +213,12 @@ nav a.active {
         <div class="centered">
             <h1>Fullscreen slides with GSAP</h1>
             <p>Let's go to the <span class="go-next">next slide</span>.</p>
+            <P><a href="assets/images/TestImage.jpg" data-uk-lightbox title="">lightbox</a></P>
+
+            <div uk-lightbox>
+              <p><a href="assets/images/TestImage.jpg">ste</a></p>
+          </div>
+
         </div>
     </div>
     <div class="slide" id="slide-2" data-name="slide-2">
@@ -198,12 +243,17 @@ nav a.active {
 </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <!-- <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script> -->
-     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/TweenLite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/plugins/CSSPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/plugins/ScrollToPlugin.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.xx.x/css/uikit.min.css" /> -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.0/dist/js/uikit.min.js"></script>
+    <!--Global site scripts-->
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/ui.js"></script>
+
+    <!-- <script src="assets/js/main.js"></script> -->
     
   </body>
 </html>

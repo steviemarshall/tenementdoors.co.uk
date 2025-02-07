@@ -1,0 +1,43 @@
+header.primary-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  z-index: 200;
+}
+
+.logo-holder { 
+  &--mobile {
+    width: 40px;
+    height: 40px;
+    background-color: green;
+  }
+  &--desktop {
+    background-color: teal;
+    display: none;
+  }
+}
+
+.menu-holder {
+  width: 40px;
+  height: 40px;
+}
+
+@media (min-width: $breakpoint-medium) {
+  .logo-holder {
+    &--mobile {
+      display: none;
+    }
+    &--desktop {
+      display: block;
+      width: 230px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  header.primary-header {
+    background-color: blue;
+  }
+}
