@@ -19,6 +19,11 @@
   transition: 1.2s, all, cubic-bezier(0.22, 0.44, 0, 1);*/
 }
 
+.door-card {
+  border: 1px solid sandybrown;
+}
+
+
 // .slide .centered {
 //   width: 60%;
 //   margin: 200px auto 0;
@@ -33,3 +38,26 @@
 //   margin-top: 20px;
 //   font-size: 20px;
 // }
+
+// #slide-1 {
+//   background-color: #FF00ff;
+// }
+
+#slide-2 {
+  background-color: #45959b;
+}
+
+#slide-3 {
+  background-color: #778899;
+}
+
+#slide-4 {
+  color: #FFFFFF;
+  background-color: #291F37;
+}
+
+.go-prev, .go-next {
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}

@@ -1,9 +1,120 @@
 /* - Set up custom layout & vars- */
 .sr-only {
+  background-color: yellow;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
+
+/* Typography */
+/*
+https://medium.com/codyhouse/create-your-design-system-part-1-typography-7c630d9092bd
+*/
+/* -------------------------------- 
+
+Typography
+
+-------------------------------- */
+:root {
+  --font-primary: sans-serif;
+  --font-secondary: serif;
+  /* set base values */
+  --text-base-size: 1em;
+  --text-scale-ratio: 1.2;
+  /* type scale */
+  --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+  --text-sm: calc(1em / var(--text-scale-ratio));
+  --text-md: calc(1em * var(--text-scale-ratio));
+  --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  /* line-height */
+  --heading-line-height: 1.2;
+  --body-line-height: 1.4; }
+
+body {
+  font-size: var(--text-base-size);
+  font-family: var(--font-primary);
+  color: var(--color-text); }
+
+h1, h2, h3, h4, form legend {
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-xxs);
+  line-height: var(--heading-line-height); }
+
+/* text size */
+.text--xxxl {
+  font-size: var(--text-xxxl); }
+
+h1, .text--xxl {
+  font-size: var(--text-xxl); }
+
+h2, .text--xl {
+  font-size: var(--text-xl); }
+
+h3, .text--lg {
+  font-size: var(--text-lg); }
+
+h4, .text--md {
+  font-size: var(--text-md); }
+
+.text--sm, small {
+  font-size: var(--text-sm); }
+
+.text--xs {
+  font-size: var(--text-xs); }
+
+p {
+  line-height: var(--body-line-height); }
+
+a {
+  color: var(--color-link); }
+  a:visited {
+    color: var(--color-link-visited); }
+
+b, strong {
+  font-weight: bold; }
+
+.text-container h2, .text-container h3, .text-container h4 {
+  margin-top: var(--space-sm); }
+
+.text-container ul, .text-container ol, .text-container p {
+  margin-bottom: var(--space-md); }
+
+.text-container ul, .text-container ol {
+  list-style-position: outside;
+  padding-left: 24px; }
+
+.text-container ul {
+  list-style-type: disc; }
+
+.text-container ol {
+  list-style-type: decimal; }
+
+.text-container ul li, .text-container ol li {
+  line-height: var(--body-line-height); }
+
+.text-container em {
+  font-style: italic; }
+
+.text-container u {
+  text-decoration: underline; }
+
+/* utility classes */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+/* Base Layout */
+body {
   background-color: yellow; }
 
 body {
-  background-color: yellow; }
+  font-family: "El Messiri"; }
 
 .container {
   display: flow-root;
@@ -40,22 +151,27 @@ body {
   padding-left: 0;
   padding-right: 0; }
 
-header.primary-header {
+.header-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 30px;
   z-index: 200; }
 
+header.primary-header {
+  border-bottom: 5px solid red;
+  padding-top: 20px; }
+
 .logo-holder--mobile {
-  width: 40px;
-  height: 40px;
-  background-color: green; }
+  width: 50px;
+  height: 50px; }
+  .logo-holder--mobile svg {
+    fill: white; }
 
 .logo-holder--desktop {
-  background-color: teal;
   display: none; }
+  .logo-holder--desktop svg {
+    fill: white; }
 
 .menu-holder {
   width: 40px;
@@ -87,6 +203,7 @@ header.primary-header {
   justify-content: space-between;
   padding-top: 10px; }
 
+/* Navigations */
 .nav-wrapper {
   position: fixed;
   top: 0;
@@ -108,42 +225,58 @@ header.primary-header {
   top: 0;
   right: 0; }
 
-nav ul {
-  list-style: none;
-  text-align: center;
-  margin-top: 30px; }
-
-nav ul li {
-  display: inline-block;
-  margin-right: 20px; }
-
-nav ul li:last-child {
-  margin-right: 0; }
-
 #back-to-tutorial {
   margin-left: 100px; }
 
-nav a {
+nav.primary-nav li {
   position: relative;
-  top: 0;
-  font-weight: normal;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 4px;
-  background-color: teal;
-  color: #83C78E;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none; }
+  display: block;
+  margin: 16px 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer; }
+  nav.primary-nav li a {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-radius: 50%;
+    text-indent: -999em;
+    cursor: pointer;
+    position: absolute;
+    overflow: hidden;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    transform: scale3d(1, 1, 1); }
+    nav.primary-nav li a:hover {
+      box-shadow: 0 0 0 3px white; }
+    nav.primary-nav li a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 0 1px #fff;
+      transition: height 0.3s ease; }
+    nav.primary-nav li a.active {
+      background-color: red;
+      -webkit-transform: scale3d(1.3, 1.3, 1.3);
+      transform: scale3d(1.3, 1.3, 1.3); }
+      nav.primary-nav li a.active:after {
+        height: 100%; }
 
-nav a.active {
-  top: -4px;
-  background-color: #69C773;
-  color: #FFFFFF;
-  -webkit-box-shadow: 0 4px 0 0 #51a65f;
-  -moz-box-shadow: 0 4px 0 0 #51a65f;
-  box-shadow: 0 4px 0 0 #51a65f; }
+a.active {
+  background-color: red;
+  -webkit-transform: scale3d(1.3, 1.3, 1.3);
+  transform: scale3d(1.3, 1.3, 1.3); }
+  a.active:after {
+    height: 100%; }
 
+/* Sides */
 .slides-container {
   position: absolute;
   left: 0;
@@ -161,3 +294,24 @@ nav a.active {
   /*height: 100vh + 30vh;
   transform: translateY(30vh);
   transition: 1.2s, all, cubic-bezier(0.22, 0.44, 0, 1);*/ }
+
+.door-card {
+  border: 1px solid sandybrown; }
+
+#slide-2 {
+  background-color: #45959b; }
+
+#slide-3 {
+  background-color: #778899; }
+
+#slide-4 {
+  color: #FFFFFF;
+  background-color: #291F37; }
+
+.go-prev, .go-next {
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline; }
+
+#crow-road {
+  background-color: #0e646e; }

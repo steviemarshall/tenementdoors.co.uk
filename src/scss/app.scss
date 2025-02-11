@@ -24,13 +24,17 @@
 @import 'setup/variables';
 @import 'helpers/helpers';
 
-//@import 'layout/reset';
+/* Typography */
+@import 'typography/base';
+
+/* Base Layout */
 @import 'layout/base';
 @import 'layout/header';
 @import 'layout/footer';
 
-// Navigations
+/* Navigations */
 @import 'layout/navigation';
 
-// Sides
+/* Sides */
 @import 'slides/base';
+@import 'slides/crow-road';
