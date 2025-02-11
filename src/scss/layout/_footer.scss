@@ -1,0 +1,24 @@
+.footer-wrapper {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	z-index: 30;
+	padding-top: 10px;
+}
+
+.primary-footer {
+	border-top: 1px solid white;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 10px;
+}
+
+@media (min-width: $breakpoint-medium) {
+  
+}
+
+@media (min-width: $breakpoint-large) {
+
+}

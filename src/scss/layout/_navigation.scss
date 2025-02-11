@@ -1,0 +1,78 @@
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // border: 5px solid purple;
+  z-index: 300;
+//   height: 100vh;
+  height: 0;  
+  box-sizing: border-box;
+  // width: 200px;
+  .container {
+    background-color: brown;
+    height: 0;
+    
+  }
+}
+
+.primary-nav {
+  background-color: green;
+  position: absolute;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  right: 0;
+}
+
+// nav {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   z-index: 100;
+// }
+
+nav ul {
+  list-style: none;
+  text-align: center;
+  margin-top: 30px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+#back-to-tutorial {
+  margin-left: 100px;
+}
+
+nav a {
+  position: relative;
+  top: 0;
+  
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: teal;
+  color: #83C78E;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+nav a.active {
+  top: -4px;
+  background-color: #69C773;
+  color: #FFFFFF;
+  -webkit-box-shadow: 0 4px 0 0 #51a65f;
+  -moz-box-shadow: 0 4px 0 0 #51a65f;
+  box-shadow: 0 4px 0 0 #51a65f;
+}

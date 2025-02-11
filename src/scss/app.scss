@@ -21,29 +21,16 @@
   
 
 /* - Set up custom layout & vars- */
-
 @import 'setup/variables';
+@import 'helpers/helpers';
 
 //@import 'layout/reset';
 @import 'layout/base';
 @import 'layout/header';
+@import 'layout/footer';
 
-// .green {
-// 	background:green;
-// }
+// Navigations
+@import 'layout/navigation';
 
-// .red {
-// 	background:red;
-// }
-
-// .blue {
-// 	background:blue;
-// }
-
-// .pink {
-// 	background:pink;
-// }
-
-// .purple {
-// 	background:purple;
-// }
+// Sides
+@import 'slides/base';

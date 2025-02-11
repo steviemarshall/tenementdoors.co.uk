@@ -1,6 +1,44 @@
 /* - Set up custom layout & vars- */
+.sr-only {
+  background-color: yellow; }
+
 body {
   background-color: yellow; }
+
+.container {
+  display: flow-root;
+  /* 1 */
+  box-sizing: content-box;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px; } }
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px; } }
+
+/*
+ * Remove margin from the last-child
+ */
+.container > :last-child {
+  margin-bottom: 0; }
+
+/*
+ * Remove padding from nested containers
+ */
+.container .container {
+  padding-left: 0;
+  padding-right: 0; }
 
 header.primary-header {
   position: fixed;
@@ -33,3 +71,93 @@ header.primary-header {
 @media (min-width: 1200px) {
   header.primary-header {
     background-color: blue; } }
+
+.footer-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 30;
+  padding-top: 10px; }
+
+.primary-footer {
+  border-top: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px; }
+
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 300;
+  height: 0;
+  box-sizing: border-box; }
+  .nav-wrapper .container {
+    background-color: brown;
+    height: 0; }
+
+.primary-nav {
+  background-color: green;
+  position: absolute;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  right: 0; }
+
+nav ul {
+  list-style: none;
+  text-align: center;
+  margin-top: 30px; }
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px; }
+
+nav ul li:last-child {
+  margin-right: 0; }
+
+#back-to-tutorial {
+  margin-left: 100px; }
+
+nav a {
+  position: relative;
+  top: 0;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: teal;
+  color: #83C78E;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+
+nav a.active {
+  top: -4px;
+  background-color: #69C773;
+  color: #FFFFFF;
+  -webkit-box-shadow: 0 4px 0 0 #51a65f;
+  -moz-box-shadow: 0 4px 0 0 #51a65f;
+  box-shadow: 0 4px 0 0 #51a65f; }
+
+.slides-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 10; }
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /*height: 100vh + 30vh;
+  transform: translateY(30vh);
+  transition: 1.2s, all, cubic-bezier(0.22, 0.44, 0, 1);*/ }
