@@ -1,31 +1,17 @@
 body {
-    background-color: $purple;
+	background-color: darkslategray;
+	font-family: 'El Messiri',
 }
-
-// body {
-//     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-//     font-weight: 300;
-//     letter-spacing: 0.0625em;
-// }
-
-// a {
-//     text-decoration: none;
-// }
-
-body {
-    font-family: 'El Messiri',
-}
-
 
 .container {
-    display: flow-root;
-    /* 1 */
-    box-sizing: content-box;
-    max-width: $container-max-width;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: $container-padding-horizontal;
-    padding-right: $container-padding-horizontal;
+	display: flow-root;
+	/* 1 */
+	box-sizing: content-box;
+	max-width: $container-max-width;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $container-padding-horizontal;
+	padding-right: $container-padding-horizontal;
 }
 
 /* Phone landscape and bigger */

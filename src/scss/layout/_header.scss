@@ -7,16 +7,15 @@
 }
 
 header.primary-header {
-  border-bottom: 5px solid red;
-  padding-top: 20px;
+  border-bottom: 1px solid red;
+  padding-top: 15px;
+  padding-bottom: 5px;
 }
-
 
 .logo-holder { 
   &--mobile {
     width: $logo-mobile-ratio;
     height: $logo-mobile-ratio;
-    //background-color: green;
     svg {
       fill: white;
     }
@@ -42,7 +41,8 @@ header.primary-header {
     }
     &--desktop {
       display: block;
-      width: 230px;
+      width: 160px;
+      //background-color: orange;
     }
   }
 }

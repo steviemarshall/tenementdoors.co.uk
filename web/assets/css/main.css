@@ -111,9 +111,7 @@ b, strong {
 
 /* Base Layout */
 body {
-  background-color: yellow; }
-
-body {
+  background-color: darkslategray;
   font-family: "El Messiri"; }
 
 .container {
@@ -159,12 +157,13 @@ body {
   z-index: 200; }
 
 header.primary-header {
-  border-bottom: 5px solid red;
-  padding-top: 20px; }
+  border-bottom: 1px solid red;
+  padding-top: 15px;
+  padding-bottom: 5px; }
 
 .logo-holder--mobile {
-  width: 50px;
-  height: 50px; }
+  width: 40px;
+  height: 40px; }
   .logo-holder--mobile svg {
     fill: white; }
 
@@ -182,7 +181,7 @@ header.primary-header {
     display: none; }
   .logo-holder--desktop {
     display: block;
-    width: 230px; } }
+    width: 160px; } }
 
 @media (min-width: 1200px) {
   header.primary-header {
@@ -204,80 +203,79 @@ header.primary-header {
   padding-top: 10px; }
 
 /* Navigations */
-.nav-wrapper {
-  position: fixed;
+.slide-nav-wrapper {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 300;
   height: 0;
   box-sizing: border-box; }
-  .nav-wrapper .container {
+  .slide-nav-wrapper .container {
     background-color: brown;
-    height: 0; }
+    height: 0;
+    position: relative; }
 
-.primary-nav {
+.slide-nav {
   background-color: green;
   position: absolute;
   z-index: 100;
-  width: 100px;
+  width: 16px;
   height: 100px;
-  top: 0;
-  right: 0; }
+  top: 30px;
+  right: 16px; }
+  .slide-nav ul {
+    padding: 0; }
 
-#back-to-tutorial {
-  margin-left: 100px; }
-
-nav.primary-nav li {
+.slide-nav__item, .slide-nav__prev, .slide-nav__next {
   position: relative;
   display: block;
   margin: 16px 0;
   width: 16px;
   height: 16px;
   cursor: pointer; }
-  nav.primary-nav li a {
-    top: 0;
+
+.slide-nav__trigger {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border-radius: 50%;
+  text-indent: -999em;
+  cursor: pointer;
+  position: absolute;
+  overflow: hidden;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  transform: scale3d(1, 1, 1); }
+  .slide-nav__trigger:hover {
+    box-shadow: 0 0 0 3px white; }
+  .slide-nav__trigger:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    outline: none;
-    border-radius: 50%;
-    text-indent: -999em;
-    cursor: pointer;
-    position: absolute;
-    overflow: hidden;
-    background-color: transparent;
-    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
-    transform: scale3d(1, 1, 1); }
-    nav.primary-nav li a:hover {
-      box-shadow: 0 0 0 3px white; }
-    nav.primary-nav li a:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      height: 0;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 0 1px #fff;
-      transition: height 0.3s ease; }
-    nav.primary-nav li a.active {
-      background-color: red;
-      -webkit-transform: scale3d(1.3, 1.3, 1.3);
-      transform: scale3d(1.3, 1.3, 1.3); }
-      nav.primary-nav li a.active:after {
-        height: 100%; }
+    background-color: #fff;
+    box-shadow: 0 0 1px #fff;
+    transition: height 0.3s ease; }
+  .slide-nav__trigger.active {
+    background-color: red;
+    -webkit-transform: scale3d(1.3, 1.3, 1.3);
+    transform: scale3d(1.3, 1.3, 1.3); }
+    .slide-nav__trigger.active:after {
+      height: 100%; }
 
-a.active {
-  background-color: red;
-  -webkit-transform: scale3d(1.3, 1.3, 1.3);
+.slide-nav a.active {
   transform: scale3d(1.3, 1.3, 1.3); }
-  a.active:after {
+  .slide-nav a.active:after {
     height: 100%; }
 
 /* Sides */
-.slides-container {
+.slides-wrapper {
   position: absolute;
   left: 0;
   top: 0;
@@ -294,9 +292,28 @@ a.active {
   /*height: 100vh + 30vh;
   transform: translateY(30vh);
   transition: 1.2s, all, cubic-bezier(0.22, 0.44, 0, 1);*/ }
+  .slide .container {
+    margin-top: 80px;
+    height: 80vh; }
 
 .door-card {
-  border: 1px solid sandybrown; }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid pink;
+  box-sizing: border-box; }
+  .door-card__door {
+    aspect-ratio: auto 1 / 1.20;
+    width: 50%;
+    height: 100%;
+    background: teal;
+    border: 3px solid brown;
+    box-sizing: border-box; }
+  .door-card__street {
+    border: 2px solid purple;
+    box-sizing: border-box; }
 
 #slide-2 {
   background-color: #45959b; }

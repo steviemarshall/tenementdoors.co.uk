@@ -1,4 +1,4 @@
-.slides-container {
+.slides-wrapper {
   position: absolute;
   left: 0;
   top: 0;
@@ -17,31 +17,34 @@
   /*height: 100vh + 30vh;
   transform: translateY(30vh);
   transition: 1.2s, all, cubic-bezier(0.22, 0.44, 0, 1);*/
+  .container {
+    margin-top: 80px;
+    height: 80vh;
+  }
 }
 
 .door-card {
-  border: 1px solid sandybrown;
+  // border: 5px solid yellow;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid pink;
+  box-sizing: border-box;
+  &__door {
+    aspect-ratio: auto 1 / 1.20;
+    width: 50%;
+    height: 100%;
+    background: teal;
+    border: 3px solid brown;
+    box-sizing: border-box;
+  }
+  &__street {
+    border: 2px solid purple;
+    box-sizing: border-box;
+  }
 }
-
-
-// .slide .centered {
-//   width: 60%;
-//   margin: 200px auto 0;
-// }
-
-// .slide .centered h1 {
-//   text-align: center;
-// }
-
-// .slide .centered p {
-//   text-align: center;
-//   margin-top: 20px;
-//   font-size: 20px;
-// }
-
-// #slide-1 {
-//   background-color: #FF00ff;
-// }
 
 #slide-2 {
   background-color: #45959b;

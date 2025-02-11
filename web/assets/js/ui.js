@@ -36,7 +36,7 @@ tenementDoors.ui = {
 		var $navButtons = $("nav a").filter("[href^=#]");
 		var $navGoPrev = $(".go-prev");
 		var $navGoNext = $(".go-next");
-		var $slidesContainer = $(".slides-container");
+		var $slidesContainer = $(".slides-wrapper");
 		var $slides = $(".slide");
 		var $currentSlide = $slides.first();
 
