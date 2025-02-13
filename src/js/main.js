@@ -9,8 +9,8 @@ $( document ).ready(function() {
   var $document = $(document);
   //Only links that starts with #
   var $navButtons = $("nav a").filter("[href^=#]");
-  var $navGoPrev = $(".go-prev");
-  var $navGoNext = $(".go-next");
+  var $navGoPrev = $(".js-go-prev");
+  var $navGoNext = $(".js-go-next");
   var $slidesContainer = $(".slides-container");
   var $slides = $(".slide");
   var $currentSlide = $slides.first();

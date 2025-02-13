@@ -17,24 +17,28 @@
   /*height: 100vh + 30vh;
   transform: translateY(30vh);
   transition: 1.2s, all, cubic-bezier(0.22, 0.44, 0, 1);*/
-  .container {
+  .uk-container {
     margin-top: 80px;
     height: 80vh;
   }
 }
-
+.door-card-wrap {
+  display: flex;
+  height: 100%;
+  border: 5px solid lightsalmon;
+}
 .door-card {
   // border: 5px solid yellow;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  width: 100%;
   align-items: center;
   justify-content: center;
   border: 2px solid pink;
   box-sizing: border-box;
   &__door {
     aspect-ratio: auto 1 / 1.20;
-    width: 50%;
+    max-width: 100%;
     height: 100%;
     background: teal;
     border: 3px solid brown;
@@ -63,4 +67,37 @@
   cursor: pointer;
   font-weight: bold;
   text-decoration: underline;
+}
+
+@media (min-width: $breakpoint-small) {
+  .door-card {
+    border: 2px solid green;
+  } 
+}
+
+@media (min-width: $breakpoint-medium) {
+  .door-card {
+    border: 2px solid yellow;
+    &__door {
+      background-color: orange;
+    }
+  } 
+}
+
+@media (min-width: $breakpoint-large) {
+  .door-card {
+    border: 2px solid orange;
+    &__door {
+      background-color: olivedrab;
+    }
+  } 
+}
+
+@media (min-width: $breakpoint-xlarge) {
+  .door-card {
+    border: 2px solid royalblue;
+    &__door {
+      background-color: yellowgreen;
+    }
+  } 
 }

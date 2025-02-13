@@ -34,8 +34,8 @@ tenementDoors.ui = {
 		var $body = $("body");
 		//Only links that starts with #
 		var $navButtons = $("nav a").filter("[href^=#]");
-		var $navGoPrev = $(".go-prev");
-		var $navGoNext = $(".go-next");
+		var $navGoPrev = $(".js-go-prev");
+		var $navGoNext = $(".js-go-next");
 		var $slidesContainer = $(".slides-wrapper");
 		var $slides = $(".slide");
 		var $currentSlide = $slides.first();

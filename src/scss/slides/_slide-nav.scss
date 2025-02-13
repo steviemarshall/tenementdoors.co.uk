@@ -1,0 +1,121 @@
+.slide-nav-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 300;
+  height: 0;  
+  box-sizing: border-box;
+  .uk-container {
+    background-color: brown;
+    height: 0;
+    position: relative;
+  }
+}
+
+.slide-nav {
+  $self: &;
+  background-color: green;
+  position: absolute;
+  z-index: 100;
+  width: 16px;
+  height: 100px;
+  top: calc(50vh - 100px);
+  right: 16px;
+  ul {
+    padding: 0;
+  }
+  &__item {
+    position: relative;
+    display: block;
+    margin: 16px 0;
+    width: 16px;
+    height: 16px;   
+    cursor: pointer;
+    #{ $self }__trigger {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      border-radius: 50%;
+      text-indent: -999em;
+      cursor: pointer;
+      position: absolute;
+      overflow: hidden;
+      background-color: transparent;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.8);
+      transition: all 0.3s ease;
+      transform: scale3d(1, 1, 1);
+      &:hover {
+        box-shadow: 0 0 0 3px rgba(255,255,255,1);
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 0 1px #fff;
+        transition: height 0.3s ease;
+      }
+      &.active {
+        transform: scale3d(1.3, 1.3, 1.3);
+        &:after{
+          height: 100%;
+        }
+      }
+    }
+  }
+  &__prev,
+  &__next { 
+    position: relative;
+    display: block;
+    margin: 16px 0;
+    width: 16px;
+    height: 16px;   
+    cursor: pointer;  
+    #{ $self }__trigger {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // outline: none;
+      // border-radius: 50%;
+      // text-indent: -999em;
+      // cursor: pointer;
+      // position: absolute;
+      // overflow: hidden;
+      background-color: red;
+      .uk-icon {
+        background-color: blue;
+        font-weight: bold;
+      }
+      &:after {
+        // content: '';
+        // position: absolute;
+        // bottom: 0;
+        // height: 0;
+        // left: 0;
+        // width: 100%;
+        // background-color: #fff;
+        // box-shadow: 0 0 1px #fff;
+        // transition: height 0.3s ease;
+      }
+    } 
+  }
+
+  // &__item {
+  //   display: none;
+  // }
+
+  // &__prev,
+  // &__next {
+  //   background-color: black;
+  // }
+
+}
+
+
