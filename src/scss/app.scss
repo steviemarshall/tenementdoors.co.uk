@@ -23,6 +23,7 @@ $global-link-color: #ff00ff;
 /* - Set up custom layout & vars- */
 @import 'setup/variables';
 @import 'helpers/helpers';
+@import 'helpers/mixins';
 
 /* Typography */
 @import 'typography/base';
@@ -30,6 +31,8 @@ $global-link-color: #ff00ff;
 /* Base Layout */
 @import 'layout/base';
 @import 'layout/header';
+@import 'layout/menu';
+@import 'layout/menu-icon';
 @import 'layout/footer';
 
 /* Navigations */

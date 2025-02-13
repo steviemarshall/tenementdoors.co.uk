@@ -15,24 +15,26 @@
 
 .slide-nav {
   $self: &;
-  background-color: green;
+  background-color: blue;
   position: absolute;
   z-index: 100;
-  width: 16px;
-  height: 100px;
-  top: calc(50vh - 100px);
-  right: 16px;
+  width: $slide-nav-up-down-ratio-mob;
+  height: calc((#{$slide-nav-up-down-ratio-mob}*2) + (#{$slide-nav-up-down-ratio-mob}/2));
+  top: calc(50vh - ((#{$slide-nav-up-down-ratio-mob}*2) + (#{$slide-nav-up-down-ratio-mob}/2)));
+  right: $slide-nav-up-down-ratio-mob/2.5;
   ul {
     padding: 0;
   }
   &__item {
+    
     position: relative;
     display: block;
-    margin: 16px 0;
+    margin: 16px auto;
     width: 16px;
     height: 16px;   
     cursor: pointer;
     #{ $self }__trigger {
+      @include HEXtoRGBA(background-color, $black, .3);
       top: 0;
       left: 0;
       width: 100%;
@@ -44,7 +46,7 @@
       position: absolute;
       overflow: hidden;
       background-color: transparent;
-      box-shadow: inset 0 0 0 2px rgba(255,255,255,.8);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.6);
       transition: all 0.3s ease;
       transform: scale3d(1, 1, 1);
       &:hover {
@@ -57,8 +59,8 @@
         height: 0;
         left: 0;
         width: 100%;
-        background-color: #fff;
-        box-shadow: 0 0 1px #fff;
+        background-color: $white;
+        box-shadow: 0 0 1px $white;
         transition: height 0.3s ease;
       }
       &.active {
@@ -71,51 +73,58 @@
   }
   &__prev,
   &__next { 
+    @include HEXtoRGBA(background-color, $black, .5);
     position: relative;
     display: block;
-    margin: 16px 0;
-    width: 16px;
-    height: 16px;   
-    cursor: pointer;  
+    margin: 0;
+    width: $slide-nav-up-down-ratio-mob;
+    height: $slide-nav-up-down-ratio-mob;   
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all .2s ease;
     #{ $self }__trigger {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      // outline: none;
-      // border-radius: 50%;
-      // text-indent: -999em;
-      // cursor: pointer;
-      // position: absolute;
-      // overflow: hidden;
-      background-color: red;
-      .uk-icon {
-        background-color: blue;
+      position: relative;
+      i {
+        color: $white;
         font-weight: bold;
-      }
-      &:after {
-        // content: '';
-        // position: absolute;
-        // bottom: 0;
-        // height: 0;
-        // left: 0;
-        // width: 100%;
-        // background-color: #fff;
-        // box-shadow: 0 0 1px #fff;
-        // transition: height 0.3s ease;
+        text-indent: unset;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     } 
+    &:hover {
+      @include HEXtoRGBA(background-color, $black, .8);
+      text-decoration: none;
+      #{ $self }__trigger {
+        text-decoration: none;
+      }
+    }
+  }
+  &__prev{
+    margin-bottom: $slide-nav-up-down-ratio-mob/2;
   }
 
-  // &__item {
-  //   display: none;
-  // }
-
-  // &__prev,
-  // &__next {
-  //   background-color: black;
-  // }
-
+  &__item {
+    display: none;
+  }
 }
 
+@media (min-width: $breakpoint-small) {
+  .slide-nav {
+    background-color: red;
+    right: $slide-nav-up-down-ratio-mob;
+    &__item {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  .slide-nav {
+    background-color: aqua;
+  }
+}
 

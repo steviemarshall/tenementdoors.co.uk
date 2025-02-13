@@ -27,7 +27,7 @@
   <body>
 
     <div class="header-wrapper">
-      <div class="container">
+      <div class="uk-container">
         
         <header class="primary-header">
           <div class="logos-wrap">
@@ -64,13 +64,22 @@
             </div>
           </div>
           
-          <nav class="menu-holder" style="display: none;">
+          <nav class="nav-holder" style="display: none;">
             <ul>
               <li><a href="/">Home</a></li>
               <li><a href="/">About</a></li>
               <li><a href="/">Contact</a></li>
             </ul>
           </nav>
+
+          <div class="menu-icon-wrapper">
+            <div class="hamburger" id="hamburger-9">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          
 
         </header>
           
@@ -81,12 +90,12 @@
       <div class="uk-container">
         <nav class="slide-nav">
           <ul>
-              <li class="slide-nav__prev"><a class="slide-nav__trigger js-go-prev"><span uk-icon="icon: chevron-up"></span>Previous</a></li>
-              <li class="slide-nav__item"><a class="slide-nav__trigger" href="#crow-road"  uk-tooltip="title: ste; pos: left">Door 1<</span></a></li>
-              <li class="slide-nav__item"><a class="slide-nav__trigger" href="#slide-2">Door 2</a></li>
-              <li class="slide-nav__item"><a class="slide-nav__trigger" href="#slide-3">>Door 3</a></li>
-              <li class="slide-nav__item"><a class="slide-nav__trigger" href="#slide-4">>Door 4</a></li>
-              <li class="slide-nav__next"><a class="slide-nav__trigger js-go-next"><span uk-icon="icon: chevron-up"></span>Next</a></li>
+              <li class="slide-nav__prev"><a class="slide-nav__trigger js-go-prev"><i class="fa-solid fa-chevron-up"></i><span class="sr-only">Previous</span></a></li>
+              <li class="slide-nav__item"><a class="slide-nav__trigger" href="#crow-road"  uk-tooltip="title: ste; pos: left"><span class="sr-only">Door 1</span></span></a></li>
+              <li class="slide-nav__item"><a class="slide-nav__trigger" href="#slide-2"><span class="sr-only">Door 2</span></a></li>
+              <li class="slide-nav__item"><a class="slide-nav__trigger" href="#slide-3"><span class="sr-only">Door 3</span></a></li>
+              <li class="slide-nav__item"><a class="slide-nav__trigger" href="#slide-4"><span class="sr-only">Door 4</span></a></li>
+              <li class="slide-nav__next"><a class="slide-nav__trigger js-go-next"><i class="fa-solid fa-chevron-down"></i><span class="sr-only">Next</span></a></li>
           </ul>
         </nav>
       </div>
@@ -977,13 +986,10 @@
     <!-- #TODO UIKIT needed? -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.xx.x/css/uikit.min.css" /> -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.0/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.0/dist/js/uikit-icons.min.js"></script>
     
     <!--Global site scripts-->
+    <script src="https://kit.fontawesome.com/9315cd8c71.js" crossorigin="anonymous"></script>
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/ui.js"></script>
-
-    <!-- <script src="assets/js/main.js"></script> -->
-    
   </body>
 </html>

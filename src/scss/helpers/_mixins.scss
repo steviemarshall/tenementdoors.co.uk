@@ -1,0 +1,3 @@
+@mixin HEXtoRGBA ($property, $color, $opacity: 1) {
+  #{$property}: rgba($color, $opacity)
+}

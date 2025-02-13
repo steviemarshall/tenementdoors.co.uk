@@ -10,16 +10,27 @@ tenementDoors.ui = {
 		
 		console.log( "setupNavigation!" );
 
-    $('.menu-trigger').click(function() {
-      var $body = $('body');
-      $body.toggleClass('nav-active');
+    // $('.menu-trigger').click(function() {
+    //   var $body = $('body');
+    //   $body.toggleClass('nav-active');
       
-      // change menu text
-      $('span.menu-trigger-txt').text(function(i, v){
-         return v === 'menu' ? 'close' : 'menu'
-      })
+    //   // change menu text
+    //   $('span.menu-trigger-txt').text(function(i, v){
+    //      return v === 'menu' ? 'close' : 'menu'
+    //   })
 
-    });
+    // });
+
+		// var navTrigger = $('.menu-nav-icon');
+
+		// navTrigger.on('click', function() {
+		// 	$(this).toggleClass('active');
+		// });
+
+		$(".hamburger").click(function(){
+			$(this).toggleClass("is-active");
+		});
+
 
   },
 

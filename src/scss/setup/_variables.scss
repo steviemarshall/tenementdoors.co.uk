@@ -10,10 +10,20 @@ $container-padding-horizontal-m: $global-medium-gutter;
 // $breakpoint-large:  1200px;
 // $breakpoint-xlarge:  1600px;
 
+// Colors 
+$black: #000000;
+$white: #ffffff;
+
 // Containers
 $container-padding-horizontal: 15px;
 $container-padding-horizontal-s: $global-gutter;
 $container-max-width: 1200px;
+
+// Slide Nav
+$slide-nav-up-down-ratio-mob: 36px;
+$slide-nav-ratio: 16px;
+$slide-nav-ratio-desktop: 22px;
+
 
 // Header
 $logo-mobile-ratio: 40px;
