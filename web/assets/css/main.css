@@ -10499,7 +10499,8 @@ header.primary-header {
   right: 0;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  z-index: 250; }
 
 @media (min-width: 960px) {
   .logo-holder--mobile {
@@ -10512,7 +10513,47 @@ header.primary-header {
   header.primary-header {
     background-color: blue; } }
 
-.hamburger .line {
+.menu-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 101%;
+  z-index: 200;
+  background-color: #09142a;
+  transition: left 0.5s ease; }
+
+body.menu-active .menu-wrapper {
+  left: 0; }
+
+.primary-nav ul {
+  border-top: rgba(255, 255, 255, 0.2);
+  border-width: 1px;
+  border-top-style: solid;
+  margin: 80px 15px 0 15px;
+  padding: 0; }
+
+.primary-nav__item {
+  display: block; }
+
+.primary-nav__link {
+  border-bottom: rgba(255, 255, 255, 0.2);
+  border-width: 1px;
+  border-bottom-style: solid;
+  padding: 15px 0;
+  color: #ffffff;
+  font-size: 22px;
+  display: block; }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%; }
+  100% {
+    opacity: 1;
+    left: 0; } }
+
+.nav-btn .line {
   width: 26px;
   height: 2px;
   background-color: #ffffff;
@@ -10520,13 +10561,23 @@ header.primary-header {
   margin: 6px auto;
   transition: all 0.3s ease-in-out; }
 
-.hamburger:hover {
+.nav-btn:hover {
   cursor: pointer; }
 
-#hamburger-9.is-active {
+.nav-btn.menu-active {
   transform: rotate(45deg); }
+  .nav-btn.menu-active:before {
+    border: 2px solid #ffffff; }
+  .nav-btn.menu-active .line {
+    width: 18px; }
+    .nav-btn.menu-active .line:nth-child(2) {
+      opacity: 0; }
+    .nav-btn.menu-active .line:nth-child(1) {
+      transform: translateY(8px); }
+    .nav-btn.menu-active .line:nth-child(3) {
+      transform: translateY(-8px) rotate(90deg); }
 
-#hamburger-9:before {
+.nav-btn:before {
   content: "";
   position: absolute;
   box-sizing: border-box;
@@ -10537,21 +10588,6 @@ header.primary-header {
   left: calc(50% - 20px);
   border-radius: 100%;
   transition: all 0.3s ease-in-out; }
-
-#hamburger-9.is-active:before {
-  border: 2px solid green; }
-
-#hamburger-9.is-active .line {
-  width: 18px; }
-
-#hamburger-9.is-active .line:nth-child(2) {
-  opacity: 0; }
-
-#hamburger-9.is-active .line:nth-child(1) {
-  transform: translateY(8px); }
-
-#hamburger-9.is-active .line:nth-child(3) {
-  transform: translateY(-8px) rotate(90deg); }
 
 .footer-wrapper {
   position: fixed;
@@ -10699,7 +10735,7 @@ small.ref {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 300;
+  z-index: 150;
   height: 0;
   box-sizing: border-box; }
   .slide-nav-wrapper .uk-container {

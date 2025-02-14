@@ -27,8 +27,12 @@ tenementDoors.ui = {
 		// 	$(this).toggleClass('active');
 		// });
 
-		$(".hamburger").click(function(){
-			$(this).toggleClass("is-active");
+		var $body = $('body');
+		var $navBtn = $('.js-nav-btn');
+
+		$navBtn.click(function(){
+			$(this).toggleClass("menu-active");
+			$body.toggleClass("menu-active");
 		});
 
 
