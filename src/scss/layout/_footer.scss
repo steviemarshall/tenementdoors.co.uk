@@ -9,16 +9,86 @@
 }
 
 .primary-footer {
-	border-top: 1px solid white;
+	position: relative;
+	// border-top: 1px solid white;
 	display: flex;
 	justify-content: space-between;
 	padding-top: 10px;
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		height: 1px;
+		width: 22px;
+		// background-color: #fff;
+		@include HEXtoRGBA(background-color, $white, .5);
+		top: 0; 
+	}
+	&:before {
+		left: 0;
+	}
+	&:after {
+		right: 0;
+	}
 }
 
-@media (min-width: $breakpoint-medium) {
-  
+small.copy,
+small.ref {
+	position: relative;
+	font-size: 15px;
+	color: $white;
+	// @include HEXtoRGBA(background-color, $white, .5);
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+	}
+}
+
+small.copy {
+	padding-left: 16px;
+	&:before{
+		top: -16px;
+		height: 20px;
+		width: 1px; 
+		// background-color: #fff;
+		left: 5px;
+		@include HEXtoRGBA(background-color, $white, .5);
+	}
+}
+small.ref {
+	padding-right: 16px;
+	&:after {
+		top: -16px;
+		height: 20px;
+		width: 1px;
+		// background-color: #fff;
+		@include HEXtoRGBA(background-color, $white, .5);
+		right: 5px;
+	}
+	// &:before {
+  //   left: 0;
+	// }
+	// &:after {
+  //   right: 0;
+	// }
+}
+
+
+
+
+// small.ref {
+// 	background-color: red;
+// 	padding-right: 16px;
+// }
+
+@media (min-width: $breakpoint-small) {
+}
+
+@media (min-width: $breakpoint-medium) { 
 }
 
 @media (min-width: $breakpoint-large) {
-
 }

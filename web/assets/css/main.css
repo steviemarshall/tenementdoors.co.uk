@@ -10563,10 +10563,52 @@ header.primary-header {
   padding-top: 10px; }
 
 .primary-footer {
-  border-top: 1px solid white;
+  position: relative;
   display: flex;
   justify-content: space-between;
   padding-top: 10px; }
+  .primary-footer:before, .primary-footer:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    height: 1px;
+    width: 22px;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 0; }
+  .primary-footer:before {
+    left: 0; }
+  .primary-footer:after {
+    right: 0; }
+
+small.copy,
+small.ref {
+  position: relative;
+  font-size: 15px;
+  color: #ffffff; }
+  small.copy:before, small.copy:after,
+  small.ref:before,
+  small.ref:after {
+    content: '';
+    position: absolute;
+    z-index: 1; }
+
+small.copy {
+  padding-left: 16px; }
+  small.copy:before {
+    top: -16px;
+    height: 20px;
+    width: 1px;
+    left: 5px;
+    background-color: rgba(255, 255, 255, 0.5); }
+
+small.ref {
+  padding-right: 16px; }
+  small.ref:after {
+    top: -16px;
+    height: 20px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    right: 5px; }
 
 /* Navigations */
 /* Sides */
