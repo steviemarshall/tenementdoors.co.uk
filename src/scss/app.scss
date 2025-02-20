@@ -1,7 +1,7 @@
 // // #TODO - UIKIT NEEDED?
 
 // 1. Your custom variables and variable overwrites.
-$global-link-color: #ff00ff;
+$global-link-color: #15c1ba;
 
 // 2. Import default variables and available mixins.
 @import "uikit/variables-theme.scss";
@@ -31,6 +31,7 @@ $global-link-color: #ff00ff;
 /* Base Layout */
 @import 'layout/base';
 @import 'layout/header';
+@import 'layout/page';
 @import 'layout/menu';
 @import 'layout/menu-icon';
 @import 'layout/footer';
@@ -41,3 +42,6 @@ $global-link-color: #ff00ff;
 @import 'slides/base';
 @import 'slides/slide-nav';
 @import 'slides/crow-road';
+@import 'slides/queens-drive';
+@import 'slides/dowanside-road';
+@import 'slides/bower-street';

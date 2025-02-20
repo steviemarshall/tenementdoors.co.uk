@@ -2,4 +2,240 @@ $crow-road-bkg: #0e646e;
 
 #crow-road {
   background-color: $crow-road-bkg;
+  .st0 {
+    fill: #696292;
+  }
+
+  .st1 {
+    fill: #976251;
+  }
+
+  .st2 {
+    fill: #dc4834;
+  }
+
+  .st3 {
+    fill: #968cd1;
+  }
+
+  .st4 {
+    fill: url(#radial-gradient2);
+  }
+
+  .st4, .st5 {
+    mix-blend-mode: multiply;
+  }
+
+  .st6 {
+    fill: #beb094;
+  }
+
+  .st7 {
+    fill: #6f4132;
+  }
+
+  .st8 {
+    mask: url(#mask-1);
+  }
+
+  .st9 {
+    fill: #9a9a9a;
+  }
+
+  .st10 {
+    fill: #a09487;
+  }
+
+  .st11 {
+    fill: #c8b9a9;
+  }
+
+  .st12 {
+    fill: #4f1b0a;
+  }
+
+  .st13 {
+    fill: #3c4a53;
+  }
+
+  .st13, .st14, .st15, .st16, .st17, .st18 {
+    fill-rule: evenodd;
+  }
+
+  .st5 {
+    fill: url(#radial-gradient);
+  }
+
+  .st19 {
+    fill: #b4a698;
+  }
+
+  .st20 {
+    fill: #cbc6e8;
+  }
+
+  .st21 {
+    fill: #b0887b;
+  }
+
+  .st22 {
+    mask: url(#mask);
+  }
+
+  .st23 {
+    fill: #8c675b;
+  }
+
+  .st24 {
+    fill: #421708;
+  }
+
+  .st14, .st25 {
+    fill: #303b42;
+  }
+
+  .st26 {
+    fill: #606060;
+  }
+
+  .st27 {
+    fill: #ded5cb;
+  }
+
+  .st28 {
+    fill: #dde6f0;
+  }
+
+  .st29 {
+    mask: url(#mask-2);
+  }
+
+  .st30 {
+    fill: #e36d5d;
+  }
+
+  .st31 {
+    fill: url(#radial-gradient1);
+  }
+
+  .st32 {
+    opacity: 0;
+  }
+
+  .st33 {
+    fill: #8b513e;
+  }
+
+  .st15 {
+    fill: #928f86;
+  }
+
+  .st34 {
+    fill: #737373;
+  }
+
+  .st16, .st35 {
+    fill: #978154;
+  }
+
+  .st36 {
+    fill: #322710;
+  }
+
+  .st37 {
+    fill: #8c8276;
+  }
+
+  .st38 {
+    fill: #2c0f06;
+  }
+
+  .st39 {
+    fill: #471809;
+  }
+
+  .st40 {
+    fill: #f2a565;
+  }
+
+  .st41 {
+    fill: #63220d;
+  }
+
+  .st42 {
+    fill: #58441d;
+  }
+
+  .st43 {
+    fill: #fff;
+    opacity: .1;
+  }
+
+  .st44 {
+    fill: #6e260e;
+  }
+
+  .st45 {
+    filter: url(#luminosity-noclip2);
+  }
+
+  .st17 {
+    fill: #363430;
+  }
+
+  .st46 {
+    fill: #a77b6c;
+  }
+
+  .st47 {
+    fill: #355233;
+  }
+
+  .st48 {
+    fill: #5e4238;
+  }
+
+  .st18 {
+    fill: #242c31;
+  }
+
+  .st49 {
+    fill: #715725;
+  }
+
+  .st50 {
+    fill: #f6bf91;
+  }
+
+  .st51 {
+    fill: #ababab;
+  }
+
+  .st52 {
+    fill: #7d6129;
+  }
+
+  .st53 {
+    fill: #cabbae;
+  }
+
+  .st54 {
+    fill: #496347;
+  }
+
+  .st55 {
+    fill: url(#radial-gradient3);
+  }
+
+  .st56 {
+    fill: #5c5c5c;
+  }
+
+  .st57 {
+    mask: url(#mask-3);
+  }
+
+  .st58 {
+    filter: url(#luminosity-noclip);
+  }
 }

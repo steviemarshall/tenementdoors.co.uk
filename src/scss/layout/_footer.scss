@@ -1,11 +1,13 @@
-.footer-wrapper {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 40px;
-	z-index: 30;
-	padding-top: 10px;
+body.slider-screen {
+	.footer-wrapper {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 40px;
+		z-index: 30;
+		padding-top: 10px;
+	}
 }
 
 .primary-footer {
@@ -14,6 +16,7 @@
 	display: flex;
 	justify-content: space-between;
 	padding-top: 10px;
+	padding-bottom: 10px;
 	&:before,
 	&:after {
 		content: '';

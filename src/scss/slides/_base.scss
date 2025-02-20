@@ -25,7 +25,7 @@
 .door-card-wrap {
   display: flex;
   height: 100%;
-  border: 5px solid lightsalmon;
+  // border: 5px solid lightsalmon;
 }
 .door-card {
   // border: 5px solid yellow;
@@ -34,24 +34,24 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  border: 2px solid pink;
+  // border: 2px solid pink;
   box-sizing: border-box;
   &__door {
     aspect-ratio: auto 1 / 1.20;
     max-width: 100%;
     height: 100%;
-    background: teal;
-    border: 3px solid brown;
+    //background: teal;
+    // border: 3px solid brown;
     box-sizing: border-box;
   }
   &__street {
-    border: 2px solid purple;
+    // border: 2px solid purple;
     box-sizing: border-box;
+    padding-top: 10px;
+    h1 {
+      font-size: 20px;
+    }
   }
-}
-
-#slide-2 {
-  background-color: #45959b;
 }
 
 #slide-3 {
@@ -71,33 +71,33 @@
 
 @media (min-width: $breakpoint-small) {
   .door-card {
-    border: 2px solid green;
+    // border: 2px solid green;
   } 
 }
 
 @media (min-width: $breakpoint-medium) {
-  .door-card {
-    border: 2px solid yellow;
-    &__door {
-      background-color: orange;
-    }
-  } 
+  // .door-card {
+  //   // border: 2px solid yellow;
+  //   &__door {
+  //     background-color: orange;
+  //   }
+  // } 
 }
 
 @media (min-width: $breakpoint-large) {
-  .door-card {
-    border: 2px solid orange;
-    &__door {
-      background-color: olivedrab;
-    }
-  } 
+  // .door-card {
+  //   border: 2px solid orange;
+  //   &__door {
+  //     background-color: olivedrab;
+  //   }
+  // } 
 }
 
 @media (min-width: $breakpoint-xlarge) {
-  .door-card {
-    border: 2px solid royalblue;
-    &__door {
-      background-color: yellowgreen;
-    }
-  } 
+  // .door-card {
+  //   border: 2px solid royalblue;
+  //   &__door {
+  //     background-color: yellowgreen;
+  //   }
+  // } 
 }

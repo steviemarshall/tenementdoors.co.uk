@@ -1,0 +1,49 @@
+.col {
+  // border: 1px solid yellow;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  margin-top: 60px;
+  &:before,
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+    top: -5px;
+		height: 20px;
+    width: 1px; 
+    @include HEXtoRGBA(background-color, $white, .5);
+	}
+  &:before{ 
+    left: 5px;
+	}
+
+  &:after {
+		right: 5px;
+	}
+  &:last-of-type {
+    margin-bottom: 60px;
+  }
+  &__border {
+    // background-color: red;
+    height: 1px;
+    position: relative;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      height: 1px;
+      width: 22px;
+      // background-color: #fff;
+      @include HEXtoRGBA(background-color, $white, .5);
+      top: 0; 
+    }
+    &:before {
+      left: -16px;
+    }
+    &:after {
+      right: -16px;
+    }
+  }
+}

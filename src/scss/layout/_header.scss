@@ -1,22 +1,27 @@
-.header-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 200;
+body.slider-screen {
+  .header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+  }
 }
 
 header.primary-header {
-  border-bottom: 1px solid red;
-  padding-top: 15px;
-  padding-bottom: 5px;
+  // border-bottom: 1px solid red;
   position: relative;
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .logo-holder { 
+  //margin-left: 15px;
   &--mobile {
     width: $logo-mobile-ratio;
-    height: $logo-mobile-ratio;
+    height: 34px;
+    // background-color: yellow;
     svg {
       fill: white;
     }
@@ -31,31 +36,60 @@ header.primary-header {
 }
 
 .menu-icon-wrapper {
-  width: 40px;
-  height: 40px;
-  // border: 1px solid red;
-  position: absolute;
-  top: 12px;
-  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 250;
+  margin-left: auto;
+ // margin-right: 15px;
+  // background-color: brown;
 }
 
-// .menu-icon-wrapper {
-//   border-radius: 2px;
-//   position: absolute;
-//   top: 0px;
-//   right: 0;
-//   transform: translate(-50%, -50%);
-//   width: 100px;
-//   height: 100px;
-//   background: #263318;
-//   box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
-// }
+.menu-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 101%;
+  z-index: 200;
+  background-color: #09142a;
+  transition: left 0.5s ease;
+}
+
+body.menu-active {
+  .menu-wrapper {
+    left: 0;
+  }
+}
+
+@media (min-width: $breakpoint-small) {
+  .menu-icon-wrapper {
+    display: none;
+    // background-color: green;
+  }
+  header.primary-header {
+    flex-direction: row;
+  }
+  .menu-wrapper {
+    position: relative;
+    top: unset;
+    right: unset;
+    left: unset;
+    bottom: unset;
+    // background-color: pink;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+}
 
 @media (min-width: $breakpoint-medium) {
+  header.primary-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
   .logo-holder {
     &--mobile {
       display: none;
@@ -63,13 +97,13 @@ header.primary-header {
     &--desktop {
       display: block;
       width: 160px;
-      //background-color: orange;
     }
   }
+  
 }
 
 @media (min-width: $breakpoint-large) {
-  header.primary-header {
-    background-color: blue;
-  }
+  // header.primary-header {
+  //   background-color: blue;
+  // }
 }
