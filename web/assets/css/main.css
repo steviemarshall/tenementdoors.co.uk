@@ -10750,17 +10750,24 @@ small.ref {
     .door-card__street h1 {
       font-size: 20px; }
 
-#slide-3 {
-  background-color: #778899; }
-
-#slide-4 {
-  color: #FFFFFF;
-  background-color: #291F37; }
-
 .go-prev, .go-next {
   cursor: pointer;
   font-weight: bold;
   text-decoration: underline; }
+
+.door-card__door svg {
+  transition: all .5s ease-in-out;
+  opacity: 0; }
+
+.door-card__street h1 {
+  transition: all .5s ease-in-out;
+  opacity: 0; }
+
+.slide-active .door-card__door svg {
+  opacity: 1; }
+
+.slide-active .door-card__street h1 {
+  opacity: 1; }
 
 .slide-nav-wrapper {
   position: absolute;

@@ -160,6 +160,7 @@ tenementDoors.ui = {
 		// Actual transition between slides
 		function goToSlide($slide) {
 			//If the slides are not changing and there's such a slide
+			$currentSlide.removeClass('slide-active');
 			if(!isAnimating && $slide.length) {
 				//setting animating flag to true
 				isAnimating = true;
@@ -177,16 +178,18 @@ tenementDoors.ui = {
 				console.log(dataName);
 
 				$body.addClass(dataName);
-
-				//var $el = $('body');
+				
 				var classList = $body.attr('class').split(' ');
 
 				$.each(classList, function(id, item) {
-						if (item.indexOf('slide-') == 0) $body.removeClass(item);
+					if (item.indexOf('slide-') == 0) $body.removeClass(item);
 				});
 
 				$body.addClass(dataName); // zoom-16, zoom-17, zoom-18 etc.
-		
+				
+				
+				$currentSlide.addClass('slide-active');
+
 			}
 		}
 
